@@ -24,6 +24,6 @@ function onSignIn(googleUser) {
     });
 
     $('.g-signin').css('display','block')
-    $('.data').css('display','none')
+    $('.data').css('display','block')
 
   }
