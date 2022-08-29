@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Wallet</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <section class="instructions">
+        <div>
+            <h3>Instructions to use</h3>
+            <ul>
+                <li>1. Add your total income in the wallet amount</li>
+                <li>2. user can further add money or expenses into the current Total income</li>
+                <li>3. Add description and value of the transaction related to the current income</li>
+                <li>4. With the add button user can add new income to the wallet for all new transactions</li>
+                <li>5. All wallet records will be saved in Transaction history</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section class="wallet-wrapper ">
+        <div class="container">
+            <button class="mob_menu">
+                <span class="mob_bar"></span>
+                <span class="mob_bar"></span>
+                <span class="mob_bar"></span>
+            </button>
+ 
+            <a class="logo">
+                <img src="wallet-svgrepo-com.svg" alt=""/>
+                <h2>smart wallet</h2>
+            </a>
+            
+            </button>
+            <div class="logo display_flex">
+            </div>
+            <div class="balance">
+                <div class="balance-heading">
+                    <h1>Total Balance</h1>
+            <button id="addMoneyAgain" class="btn" type="button">Add <span>&#8377;</span> </button>
+
+                </div>
+                <div class="balance-amount">
+                    <form novalidate>
+                        <input type="number" id="userMoney" placeholder="Add money to wallet" required>
+                        <button id="addMoney" class="addMoney btn btn-type">Add money</button>
+                    </form>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="income-expense display_flex">
+                <div class="income">
+                    <div class="income-totalamount">
+                        <p></p>
+                    </div>
+                    <div class="income-heading">
+                        <p>Incomes</p>
+                    </div>
+                    </div>
+                    <div class="expense">
+                    <div class="expense-totalamount">
+                    <p></p>
+                    </div>
+                    <div class="expense-heading">
+                    <p>Expenses</p>
+                    </div>
+                    </div>
+            </div>
+
+
+            <div class="add">
+                <form id="ewallet-form" novalidate>
+                    <div class="add-container">
+                        <span>MODE</span>
+                        <select class="add-type btn btn-type">
+                            <option value="+">Add Money +</option>
+                            <option value="-" selected>Add Expenses - </option>
+                        </select>
+                        <p id="form-message"></p>
+                        <input type="text"  class="add-description" placeholder="add desc" required/>
+                        <input type="number" class="add-value" placeholder="value" required/>
+                        <!-- <input class="add-btn" type="submit" value="submit"> -->
+                        <button class="btn submit-btn" type="submit">Submit</button>
+                            <!-- <i class="icon-submit"></i> -->
+                    </input>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="history display_flex">
+            <!-- <button class="removeTransaction btn btn-type">Remove all transaction</button> -->
+            <a href="history.html" class="btn-type">Transaction History</a>
+                <b>Your transactions</b>
+        </div>
+        <div class="collection">
+
+        </div>
+
+    </section>
+    <script >
+         $(document).ready(function () {
+             $('.mob_menu').click(function () {
+                 $(this).toggleClass('active');
+               $('.instructions').slideToggle();
+         })
+        //  $("#accordion").accordion();
+     })
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

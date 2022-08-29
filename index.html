@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="94821145307-lskcgmduio980idicppjno0jh0j4vfjc.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+    
+
+
+    <h1 class="alert alert-primary">Sign in with google</h1>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <div class="data">
+        <p>NAme</p>
+        <p id="name" class="alert-success"></p>
+        <p>Profile</p>
+        <img id="img" src="image" height=100 width=100 alt="" class="rounded-circle">
+        <p>Email</p>
+        <p id="email"></p>
+
+        <button type=""button class="btn btn-danger "   onclick="signOut()">Sign OUt</button>
+    </div>
+
+
+
+
+<script src="index3.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
+</html>

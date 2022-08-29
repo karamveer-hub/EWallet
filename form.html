@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html::before
+        {
+            content: none;
+
+        }
+        body{
+            background-color: rgb(238, 238, 238);
+        }
+        input{
+            outline: none;
+            border: 0.5px solid gray
+            ;
+            background: none;
+        }
+        form{
+            box-shadow: 
+            /* -6px -6px 20px 5px rgba(255, 255, 255, 0.856),
+            6px 6px 10px 4px rgb(198, 198, 198), */
+            inset -2px -2px 5px 1px rgba(255, 255, 255, 0.845),
+            inset 1px 1px 5px 1px rgba(198, 198, 198, 0.759);
+            width: 70%;
+            border-radius: 40px;
+            padding: 30px;
+            background-color: rgb(238, 238, 238);
+        }
+        form div{
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        form div input{
+            border: none;
+            border-radius: 10px;
+            padding: 4px 6px ;
+            width: 40%;
+            text-align: center;
+            color: rgb(86, 86, 86);
+            font-weight: 400;
+            text-shadow: 1px 1px 1px 1px rgb(198, 198, 198);
+            box-shadow: 
+            /* -6px -6px 20px 5px rgba(255, 255, 255, 0.856),
+            6px 6px 10px 4px rgb(198, 198, 198), */
+            inset -2px -2px 5px 1px rgba(255, 255, 255, 0.845),
+            inset 1px 1px 5px 1px rgba(198, 198, 198, 0.759);
+        }
+        form div label{
+            text-align: left;
+            width: 40%;
+        }
+        button{
+            padding: 6px 20px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 
+            inset -2px -2px 5px 1px rgba(255, 255, 255, 0.845),
+            inset 1px 1px 5px 1px rgba(198, 198, 198, 0.759);
+        }
+    </style>
+</head>
+<body>
+    <form id="form" novalidate>
+        <h2>form validation</h2>
+        <p id="message"></p>
+        <div>
+            <label for="fname">Full name</label>
+            <input type="text" required>
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input id="email" type="email" >
+        </div>
+        <div>
+            <label for="contact">Contact</label>
+            <input id="contact" type="number" required pattern="^[0-9]{5}-[0-9]$">
+        </div>
+        <div>
+            <label for="url">Website URL</label>
+            <input id="url" type="text" required>
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input id="password" type="password" required>
+        </div>
+        <div>
+            <label for="cpassword">Confirm password</label>
+            <input id="cpassword" type="password" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+     const form = document.querySelector('#form');
+     const message = document.querySelector('#message');
+// let isValid = false;
+
+function validateForm(){
+    //checkValidity() function
+    //setCustomValidity("error message")
+    //
+    console.log(form.checkValidity())     //giving false becaiuse form is not filled
+    isValid = form.checkValidity();
+    console.log(isValid);
+    if(!isValid){
+        message.textContent="please fill the form"
+        message.style.color="red"
+        document.querySelector("input").style.border="1px solid red"
+        document.querySelector("input").style.boxShadow="none"
+    }
+    else{
+        
+    }
+}
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    validateForm();
+    console.log(123);
+})
+    </script>
+</body>
+</html>

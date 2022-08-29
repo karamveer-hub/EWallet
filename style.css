@@ -1,0 +1,316 @@
+:root{
+
+     --yellowHeading:rgb(255, 215, 83);
+     --yellowPara:rgb(255, 213, 74);
+     --yellowAccessories:rgb(255, 213, 74);
+     --standardBorderRadius:10px
+}
+*{
+    box-sizing: border-box;
+}
+
+
+/* utitlities classes */
+.btn-type{
+    background: var(--yellowAccessories);
+    color: black;
+    padding: 5px 10px;
+    margin: 12px 0;
+    border-radius: 4px;
+}
+.display_flex{
+    width: 100%;
+}
+
+body{
+    background: black; 
+    color: white; 
+    transition: all 0.5s;
+    }
+
+
+
+/* instructions */
+.instructions{
+    display: none;
+    background: white;
+    z-index: 20;
+    position: absolute;
+    /* left: -100%; */
+    min-width: 320px;
+    min-height: 520px;
+    ; color: black !important;
+    padding: 10px;
+    border-radius: var(--standardBorderRadius);
+}
+.instructions ul li{
+    margin: 10px;
+}
+ h3{
+    color: black !important;
+}
+
+
+/* transaction and history */
+.income_history{
+    width: 30%;
+    background-color: var(--yellowAccessories);
+    color: black;
+    border-radius: 5px;
+    padding: 2px 2px;
+}
+.income_history p{
+    font-size: 0.8em;
+}
+.transaction_date_heading{
+    padding: 4px;
+}
+.transaction_date_heading p{
+    font-size: 0.8em;
+    
+}
+
+
+
+.wallet-wrapper{
+    min-height: 100vh;
+    /* width: 100%; */
+    border: 10px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+}
+.mob_bar{
+    display: block;
+    height: 1px;
+    width: 30px;
+    margin-bottom: 4px;
+    background-color: white;
+}
+
+.mob_bar:nth-child(3){
+    margin: 0;
+}
+.mob_menu{
+    position: absolute ;
+    left: 5% !important;
+    top: 5%;
+    display: inline-block;
+    z-index: 25;
+}
+.mob_menu .mob_bar{
+    width: 20px;
+    transition: all 0.7s;
+    box-shadow: 0 0 1px 0.5px rgba(255, 255, 255, 0.7);
+}
+.mob_menu.active .mob_bar:nth-child(3)
+{
+    display: none;
+}
+.mob_menu.active .mob_bar:nth-child(1){
+    background-color: black;
+    transform: translateY(5px) rotate(45deg);
+}
+.mob_menu.active .mob_bar:nth-child(2){
+    transform:  rotate(-45deg);
+    background-color: black;
+
+}
+
+.container
+{
+    position: relative;
+    border: 2px  solid gray;
+    min-height: 50%;
+    border-radius: 10px;
+    max-width: 800px;
+    flex-direction: column;
+}
+
+
+.logo.display_flex{
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px 0;
+}
+.logo h2{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+
+/* .balance section */
+#addMoneyAgain{
+   position: absolute;
+   bottom:0 !important;
+right: -60%;
+   }
+   #addMoneyAgain:hover::after{
+       content:"Add new income to your wallet 1. It will remove your all transaction for previous income.  2. You can see that in history section ";
+       position:absolute;
+       text-align: left;
+       top: 30px;
+       right: 40px;
+       width: 140px;
+       font-size: 0.8em;
+       padding: 6px 3px;
+       border-radius: 10px;
+       border: 1px solid var(--yellowAccessories);
+       background-color: rgb(0, 0, 0);
+       text-transform: capitalize;
+       /* backdrop-filter: blur(10px); */
+   }
+   #addMoneyAgain span{
+       background: var(--yellowAccessories);
+       border-radius: 50%;
+       color: black;
+       width: 20px;
+       height: 20px;
+       display: inline-block;
+       font-weight: 500;
+       text-align: center;
+       padding: 2px;
+       vertical-align: middle;
+   }
+   .balance .balance-heading{
+position: relative;
+   }
+.balance .balance-amount p{
+    font-size: 2.5rem;
+}
+.balance .balance-heading h1{
+    line-height: normal;
+    font-size: 2.1rem;
+   color: var(--yellow);
+}
+#userMoney{
+    width: 70%;
+    margin: 12px 0;
+    border-radius: 2px;
+    display: inline-block;
+}
+::placeholder{
+    font-size: 0.8em;
+}
+.addMoney{
+    /* display: inline-block; */
+   
+    position: absolute;
+    left: 0%;
+    opacity: 0;
+    transition: all 1s;
+    /* transform: translateX(-110%); */
+}
+.active{
+    left: 70%;
+    opacity: 1;
+}
+
+
+.income-expense div > div p{
+    font-size: 1.2em;
+}
+.income-expense .income .income-heading p{
+    color: var(--yellowPara);
+}
+.income-expense .expense .expense-heading p{
+    color: var(--yellowPara);
+}
+
+
+/* COLLECTION SECTION LIST*/
+.collection{
+    margin: 6px 0;
+    max-width: 800px;
+    width: 100%;
+}
+.collection .collection_inside{
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.collection .item{
+border: 0.5px solid gray;
+border-radius: 5px;
+}
+.collection .item2{
+border: 0.5px solid gray;
+border-radius: 5px;
+}
+
+.collection .item .item-description-time div:nth-child(1){
+    width: 15%;
+}
+.collection .item .item-description-time div:nth-child(2){
+    width: 20%;
+}
+.collection .item .item-description-time div:nth-child(3){
+    width: 35%;
+}
+.collection .item .item-description-time div:nth-child(4){
+    width: 30%;
+}
+.collection .item .item-description-time div p{
+    font-size: 0.7em !important;
+    text-align: center;
+}
+.item-description-time{
+    padding: 6px;
+}
+.noData{
+    padding: 10px 0;
+}
+.income-amount{
+    color: rgb(91, 255, 73);
+}
+.expense-amount{
+    color: rgb(255, 73, 73);
+
+}
+
+
+/* add section */
+.add-description,.add-value{
+    /* background-color: aliceblue; */
+    position: relative;
+    height: 40px;
+    text-align: left;
+    background: none;
+    margin: 5px 0;
+    transition: all 0.5s;
+    transform-origin: left ;
+    border-left: 2px solid var(--yellowAccessories) !important;
+    /* border-top: 6px solid transparent !important; */
+}
+.add-description:focus::placeholder,
+.add-value:focus::placeholder {
+    transition: all 0.5s;
+    color: aliceblue;
+    font-size: 0.6em;
+    font-weight: normal;
+    transform: translateY(-8px) translateX(0px) ;
+}
+.submit-btn{
+    margin: 10px;
+    border: 1px solid white;
+    padding: 4px 10px;
+}
+
+
+/* HISTORY SECTION */
+
+.history{
+    flex-direction: column;
+    align-items: flex-end;
+}
+.history b{
+    color: var(--yellowPara);
+    margin-top: 10px;
+}
