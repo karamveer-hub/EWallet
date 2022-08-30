@@ -84,7 +84,7 @@ button, input, optgroup, select, textarea {
 	border:none;
 	/* font-family:'Source Sans Pro', sans-serif; */
 }
-input,select,textarea{
+input,textarea{
 	-webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
