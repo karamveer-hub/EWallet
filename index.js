@@ -59,7 +59,10 @@ for(let select of inputRadio){
     else{
         display_none(userMoney)
         display_none(addMoney)
+         display_none(messageBox)
         display_none(addMoneyAgain)
+        display_none(messageBoxMain)
+        
         
        
     }
