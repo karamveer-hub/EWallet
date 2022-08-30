@@ -4,6 +4,14 @@
 // }
 
 const incomeExpenseDiv = document.querySelector(".income-expense")
+
+const messageBoxMain = document.querySelector(".message_box_main")
+const messageBox = document.querySelector(".message_box")
+const inputRadio = document.querySelectorAll('input[name="fav_language"]')
+
+
+console.log(inputRadio)
+
 const addDiv = document.querySelector(".add")
 const collectionDiv = document.querySelector(".collection")
 const removeTransaction = document.querySelector(".removeTransaction")
@@ -22,13 +30,47 @@ let currentId = getItemsFromLocalStorage2()
 
 
 
+
+//SPECIAL UTILITY FUNCTIONS
+function display_none(element){
+    element.style.display="none"
+}
+function display_block(element){
+    element.style.display="block"
+}
+
+
+
+
+
+
+
+for(let select of inputRadio){
+    select.addEventListener('change',(e)=>{
+    if(select.value=='Ok'){
+        console.log(select.value)
+        userMoney.style.display="inline-block"
+        addMoney.style.display="inline-block"
+        display_none(messageBox)
+        display_none(messageBoxMain)
+    } 
+    else{
+        display_none(userMoney)
+        display_none(addMoney)
+       
+    }
+})
+}
+
+message.addEventListener("blur",()=>{
+    message.style.display="none"
+})
+
 addMoneyAgain.addEventListener("click", (e) => {
     e.preventDefault()
-    userMoney.style.display = "inline-block"
-    // addMoney.style.display="inline-block"
+    display_block(messageBox)
+    display_block(messageBoxMain)
     addMoney.classList.toggle("active")
-    console.log("ksjdk")
-    // idGenerator()
 })
 let id=function idGenerator(){
     if(currentId.length>0){
@@ -111,21 +153,21 @@ function EwalletBalance() {
 
     if (totalIncomeArray.length > 0) {
         console.log("kjskdjkkjkjkjkjljjjlkj")
-        userMoney.style.display = "none"
-        // addMoney.style.display="none"
+        display_none(userMoney)
+        display_none(addMoney)
         addMoneyAgain.style.display = "inline-block"
         incomeExpenseDiv.style.display = "flex"
-        addDiv.style.display = "block"
-        collectionDiv.style.display = "block"
+        display_block(addDiv)
+        display_block(collectionDiv)
         totalIncome = parseInt(totalIncomeArray[totalIncomeArray.length - 1].totalIncome)
     }
     else {
         userMoney.style.display = "inline-block"
         addMoney.style.display = "inline-block"
-        addMoneyAgain.style.display = "none"
-        incomeExpenseDiv.style.display = "none"
-        addDiv.style.display = "none"
-        collectionDiv.style.display = "none"
+        display_none(addMoneyAgain)
+       display_none(incomeExpenseDiv)
+        display_none(addDiv)
+        display_none(collectionDiv)
     }
     let expense = 0, balance = 0;
     let items = getItemsFromLocalStorage()
@@ -438,7 +480,6 @@ function showItems(items) {
                     addItems(type, desc, value, e)
                     addItemsToLocalStorage(sno, totalIncome, id, type, desc, value, formattedTime())
                     EwalletBalance()
-                    
                     setTimeout(() => {
                         resetForm(desc, value)
                     }, 700);
