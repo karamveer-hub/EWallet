@@ -18,18 +18,53 @@
     margin: 12px 0;
     border-radius: 4px;
 }
+.submit-btn{
+    min-width: 60px;
+    margin: 10px;
+    border: 1px solid white;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: var(--yellowAccessories);
+}
+
 .display_flex{
     width: 100%;
 }
+
+
 
 body{
     background: black; 
     color: white; 
     transition: all 0.5s;
     }
-
-
-
+.message_box_main{
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    z-index: 20;
+}
+.message_box{
+    min-width: 320px;
+    display: none;
+    z-index: 21;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: left;
+    background: black;
+    
+}
+input[type="radio"]{
+    all: unset;
+}
 /* instructions */
 .instructions{
     display: none;
@@ -202,15 +237,18 @@ position: relative;
 .addMoney{
     /* display: inline-block; */
    
-    position: absolute;
-    left: 0%;
-    opacity: 0;
+    /* position: absolute;
+    left: 0%; */
+    /* opacity: 0; */
     transition: all 1s;
     /* transform: translateX(-110%); */
 }
-.active{
-    left: 70%;
-    opacity: 1;
+.addMoney.active{
+  animation: active 0.5s linear forwards;
+}
+@keyframes active{
+    from{opacity:0;left: 70%;}
+    to{opacity:1;left: 20%;}
 }
 
 
@@ -297,11 +335,6 @@ border-radius: 5px;
     font-weight: normal;
     transform: translateY(-8px) translateX(0px) ;
 }
-.submit-btn{
-    margin: 10px;
-    border: 1px solid white;
-    padding: 4px 10px;
-}
 
 
 /* HISTORY SECTION */
@@ -313,4 +346,23 @@ border-radius: 5px;
 .history b{
     color: var(--yellowPara);
     margin-top: 10px;
+}
+
+
+
+
+
+
+/* HISTORY PAGE */
+#sorting_button {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+#sorting_button img{
+    height: 20px;
+}
+input[type="date"]{
+    width: 50%;
 }
