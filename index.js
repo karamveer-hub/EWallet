@@ -52,11 +52,15 @@ for(let select of inputRadio){
         userMoney.style.display="inline-block"
         addMoney.style.display="inline-block"
         display_none(messageBox)
+        display_none(addMoneyAgain)
+        
         display_none(messageBoxMain)
     } 
     else{
         display_none(userMoney)
         display_none(addMoney)
+        display_none(addMoneyAgain)
+        
        
     }
 })
