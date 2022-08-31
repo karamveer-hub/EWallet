@@ -220,7 +220,7 @@ h6{
 }
 /* Containers*/
 .container{
-    max-width:800px;
+    max-width:600px;
     padding:10px 10px;
     width:100%;
     margin:0 auto;
@@ -229,7 +229,7 @@ h6{
     justify-content: space-between;
 }
 .display_flex{
-    max-width:800px;
+    max-width:600px;
     display: flex;
     justify-content: space-around;
     align-items: center;
