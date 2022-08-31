@@ -14,7 +14,14 @@
 </head>
 
 <body>
-    <section class="instructions">
+  
+
+ <div class="message_box_main">
+    </div>
+
+        <div class="message_box ">
+            <div class="container">
+                  <section class="instructions">
         <div>
             <h3>Instructions to use</h3>
             <ul>
@@ -27,12 +34,6 @@
         </div>
 
     </section>
-
- <div class="message_box_main">
-    </div>
-
-        <div class="message_box ">
-            <div class="container">
                 <p>Add Money to your wallet </p>
                 <p>1. It will remove your all transaction for previous income</p>
                 <p>2. You can see that in history section</p>
@@ -131,7 +132,8 @@
          $(document).ready(function () {
              $('.mob_menu').click(function () {
                  $(this).toggleClass('active');
-               $('.instructions').slideToggle();
+               $('.instructions').toggleClass('activeInstructions')
+
          })
         //  $("#accordion").accordion();
      })
