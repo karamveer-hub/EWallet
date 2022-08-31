@@ -39,46 +39,70 @@ function display_block(element){
     element.style.display="block"
 }
 
-
-
-
-
-
-
-for(let select of inputRadio){
-    select.addEventListener('change',(e)=>{
-    if(select.value=='Ok'){
-        console.log(select.value)
-        userMoney.style.display="inline-block"
-        addMoney.style.display="inline-block"
-        display_none(messageBox)
-        display_none(addMoneyAgain)
-        
-        display_none(messageBoxMain)
-    } 
-    else{
-        display_none(userMoney)
-        display_none(addMoney)
-         display_none(messageBox)
-      
-        display_none(messageBoxMain)
-        
-        
-       
-    }
-})
-}
-
+// BLUR FUNCTIONALITY
 message.addEventListener("blur",()=>{
     message.style.display="none"
 })
 
-addMoneyAgain.addEventListener("click", (e) => {
+
+// ENTER FUNCTIONALITY
+addMoney.addEventListener("click", (e) => {
+    if (userMoney.value != "") {
+        id=id()
+        addItemsToLocalStorage2(userMoney.value, id)
+        EwalletBalance()
+    } else {
+        alert("please")
+    }
+})
+addMoney.addEventListener("keyup", (e) => {
+    if (e.keyCode == '13') {
+        if (userMoney.value != "") {
+        id=id()
+            addItemsToLocalStorage2(userMoney.value, id)
+            EwalletBalance()
+        } else {
+            alert("please")
+        }
+    }
+})
+form[1].addEventListener("keyup", (e) => {
     e.preventDefault()
+    if (e.keyCode == '13' && e.target.value != "") {
+        e.preventDefault()
+        form[2].focus()
+    }
+    else {
+        return;
+    }
+})
+
+
+// ADD MONEY AGAIN
+addMoneyAgain.addEventListener("click", (event) => {
     display_block(messageBox)
     display_block(messageBoxMain)
-    addMoney.classList.toggle("active")
+    for(let select of inputRadio){
+        select.addEventListener('click',(e)=>{
+        if(select.value=='Ok'){
+            console.log(select.value)
+            userMoney.style.display="inline-block"
+            addMoney.style.display="inline-block"
+            display_none(messageBox)
+            display_none(messageBoxMain)
+            display_none(event.target)
+        } 
+        else{
+            display_none(userMoney)
+            display_none(addMoney)
+            display_none(messageBox)
+            display_none(messageBoxMain)
+        }
+    })
+    }
+    event.target.classList.toggle("active")
 })
+// ID GENERATOR
 let id=function idGenerator(){
     if(currentId.length>0){
         id=currentId[currentId.length-1].id+1
@@ -104,30 +128,7 @@ console.log(id)
 // })
 // console.log(items)
 
-addMoney.addEventListener("click", (e) => {
-
-    if (userMoney.value != "") {
-        id=id()
-        addItemsToLocalStorage2(userMoney.value, id)
-        EwalletBalance()
-    } else {
-        alert("please")
-    }
-
-})
-addMoney.addEventListener("keyup", (e) => {
-    
-    if (e.keyCode == '13') {
-
-        if (userMoney.value != "") {
-        id=id()
-            addItemsToLocalStorage2(userMoney.value, id)
-            EwalletBalance()
-        } else {
-            alert("please")
-        }
-    }
-})
+// LOCALSTORAGES
 function addItemsToLocalStorage2(totalIncome, id) {
     let money = getItemsFromLocalStorage2()
     money.push({ totalIncome, id })
@@ -376,7 +377,6 @@ function showItems(items) {
     }
         
     else {
-
                 let collectionInside = document.createElement("div")
                 collectionInside.className = "collection_inside"
                 let divDate = document.createElement("div")
@@ -390,8 +390,6 @@ function showItems(items) {
                 // collectionInside.insertBefore(divDate, collectionInside.children[0])
                 collectionDiv.insertAdjacentElement("afterbegin", collectionInside)
             }
-    
-
     
         }
         function addingDate() {
@@ -425,16 +423,7 @@ function showItems(items) {
             return itemsArray;
         }
 
-        form[1].addEventListener("keyup", (e) => {
-            e.preventDefault()
-            if (e.keyCode == '13' && e.target.value != "") {
-                e.preventDefault()
-                form[2].focus()
-            }
-            else {
-                return;
-            }
-        })
+       
 
 
         function validateForm() {
