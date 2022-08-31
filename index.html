@@ -14,26 +14,13 @@
 </head>
 
 <body>
-  
+    
 
- <div class="message_box_main">
+    <div class="message_box_main">
     </div>
 
         <div class="message_box ">
             <div class="container">
-                  <section class="instructions">
-        <div>
-            <h3>Instructions to use</h3>
-            <ul>
-                <li>1. Add your total income in the wallet amount</li>
-                <li>2. user can further add money or expenses into the current Total income</li>
-                <li>3. Add description and value of the transaction related to the current income</li>
-                <li>4. With the add button user can add new income to the wallet for all new transactions</li>
-                <li>5. All wallet records will be saved in Transaction history</li>
-            </ul>
-        </div>
-
-    </section>
                 <p>Add Money to your wallet </p>
                 <p>1. It will remove your all transaction for previous income</p>
                 <p>2. You can see that in history section</p>
@@ -45,8 +32,24 @@
                 </div>
             </div>
         </div>
+
+
     <section class="wallet-wrapper ">
         <div class="container">
+        <section class="instructions ">
+            <div>
+                <h3>Instructions to use</h3>
+                <ul>
+                    <li>1. Add your total income in the wallet amount</li>
+                    <li>2. user can further add money or expenses into the current Total income</li>
+                    <li>3. Add description and value of the transaction related to the current income</li>
+                    <li>4. With the add button user can add new income to the wallet for all new transactions</li>
+                    <li>5. All wallet records will be saved in Transaction history</li>
+                </ul>
+            </div>
+    
+        </section>
+
             <button class="mob_menu">
                 <span class="mob_bar"></span>
                 <span class="mob_bar"></span>
@@ -128,12 +131,22 @@
         </div>
 
     </section>
+
+
+    <footer class="footer">
+        <div>
+
+            <p>All Copyright Reserved @E Wallet 2022-2023</p>
+            <p>Developer Contact karamveersachdeva3@gmail.com</p>
+        </div>
+        </footer>
     <script >
          $(document).ready(function () {
              $('.mob_menu').click(function () {
                  $(this).toggleClass('active');
-               $('.instructions').toggleClass('activeInstructions')
-
+            //    $('.instructions').slideToggle();
+                 $('.instructions').toggleClass('activeInstructions')
+              
          })
         //  $("#accordion").accordion();
      })
