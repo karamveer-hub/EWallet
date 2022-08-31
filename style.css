@@ -360,8 +360,8 @@ border-radius: 5px;
 
 /* FOOTER */
 .footer{
-    /* position: absolute; */
-    /* top: 100%; */
+     position: relative; 
+     top: 100%; 
 }
 .footer p{
     font-size: 1rem;
